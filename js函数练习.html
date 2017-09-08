@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var items = [10, 120, 1000];
+        function add(obj, initialValue) {
+            obj.sum = obj.sum + initialValue;
+            return obj;
+        }
+        var obj = { sum: 0 };
+        var total = items.reduce(add, obj);
+
+        var arr = [1, 2, 3, 4, 5];
+        sum = arr.reduce(function (prev, cur, index, arr) {
+            console.log(prev, cur, index);
+            return prev + cur;
+        })
+        console.log(arr, sum);
+        // prev: 第一项的值或者上一次叠加的结果值
+        // cur: 当前会参与叠加的项
+        // index： 当前值的索引
+        // arr: 数组本身
+
+        function filter(list, fn) {
+            return list.filter(fn);
+        }
+
+        function rightCurry(fn) {
+            return function (c) {
+                return function (b) {
+                    return function (c) {
+                        return fn(a, b, c);
+                    }
+                }
+            }
+        }
+
+        var getChildren = function (x) {
+            return x + 1;
+        }
+        function map(fn, list) {
+            return list.map(fn);
+        }
+        //   var list=map(getChildren,[1,2,3,4]);
+
+        var list = [
+            { name: 'Dave', age: 40 },
+            { name: 'Dan', age: 35 },
+            { name: 'Kut', age: 30 },
+            { name: 'Jam', age: 34 },
+        ];
+        list.reduce((acc, item) => {
+            var key = item.age < 40 ? 'under40' : 'over40';
+            acc[key] = acc[key] || [];
+            acc[key].push(item);
+            return acc;
+        }, {});
+
+        var result = [
+            {
+                subject: 'math',
+                score: 88
+            },
+            {
+                subject: 'chinese',
+                score: 95
+            },
+            {
+                subject: 'english',
+                score: 80
+            }
+        ];
+        var sum = result.reduce(function (prev, cur) {
+            return cur.score + prev;
+        }, 10);
+        var dis = {
+            math: 0.5,
+            chinese: 0.3,
+            english: 0.2
+        }
+        var qsum = result.reduce(function (prev, cur) {
+            var newSub = {
+                subject: cur.subject,
+                score: cur.score * dis[cur.subject]
+            }
+            return prev + newSub.score;
+        }, 0);
+
+        var arrString = 'abcdaabc';
+
+        arrString.split('').reduce(function (res, cur) {
+            res[cur] ? res[cur]++ : res[cur] = 1
+            return res;
+        }, {})
+    </script>
+</body>
+
+</html>
