@@ -1,0 +1,148 @@
+ul{
+    list-style: none;
+    padding-left:0;
+}
+
+#sidebar{
+    width:35px;
+    background-color: #e1e1e1;
+    padding:200px 0;
+    position:fixed;
+    min-height: 100%;
+    z-index: 100;
+}
+.item{
+    font-size:12px;
+    font-family: "Microsoft Yahei";
+    text-align:center;
+    margin-top:5px;
+}
+#closeBar{
+    position: absolute;
+    bottom:30px;
+    width:35px;
+    text-align:center;
+    cursor:pointer;
+}
+.nav-content{
+    width:200px;
+    position:fixed;
+    min-height: 100%;
+    background-color: #e1e1e1;
+    border:1px solid ;
+    z-index: 99;
+    opacity:0; 
+}
+
+.nav-con-close{
+    position:absolute;
+    width:10px;
+    height:10px;
+    top:5px;
+    right:5px;
+    cursor: pointer;
+}
+
+
+.sidebar-move-left{
+    animation-name: smf;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+    
+}
+@keyframes smf{
+    from{
+
+    }
+    to{
+        transform:translateX(-120px);
+    }
+}
+.close-move-right{
+    animation-name: cmr;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+@keyframes cmr{
+    from{
+
+    }
+    to{
+        transform:translateX(160px) rotate(405deg) scale(1.5);
+    }
+}
+.sidebar-move-right{
+    animation-name: smr;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+@keyframes smr{
+    from{}
+    to{
+        transform:translateX(120px);
+    }
+}
+
+.close-move-left{
+    animation-name: cml;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+@keyframes cml{
+    from{
+        transform:scale(1.5);
+    }
+    to{
+        transform:translateX(-160px) rotate(-405deg) scale(1);
+    }
+}
+
+.menuContent-move-right{
+    animation-name: mmr;
+    animation-duration:0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+@keyframes mmr{
+    from{
+        opaciry:0
+    }
+    to{
+        opacity:1;
+        tansform:translateX(120px);
+    }
+}
+.menuContent-move-left{
+    animation-name: mml;
+    animation-duration:0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+@keyframes mml{
+    from{
+        opacity:1;
+    }
+    to{
+        opaciry:0;
+        tansform:translateX(-120px);
+    }
+}
+.menuContent-move-up{
+    animation-name: mmu;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+@keyframes mmu{
+    from{
+        opacity:0;
+    }
+    to{
+        opaciry:1;
+        tansform:translateY(-250px);
+    }
+}
