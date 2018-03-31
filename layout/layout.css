@@ -1,0 +1,16 @@
+
+/*eg. -----xxx---- */
+.attachment-title {
+    display: flex;
+    color: gainsboro;
+    line-height: 1.2em;
+  }
+  
+  .attachment-title::before, .attachment-title::after {
+    content: '';
+    border-top: 1rpx solid;
+    flex-grow: 1;
+    position: relative;
+  
+    top: 0.6em;
+  }
