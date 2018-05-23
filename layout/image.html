@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            border:1px solid lightcoral;
+            width:50%;
+            height:300px;
+        }
+        .cbox{
+            padding:calc(100%*9/32) 0;
+            background: gold;
+        }
+        .container{
+            position: relative;
+            width:100%;
+            padding-top:56.25%;/* 9/16*100% */
+            border:1px solid goldenrod;
+            height: 0;
+        }
+        .cimg{
+            position:absolute;
+            top:0;
+
+            left:0;
+           width: 100%;
+           height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="cbox"></div>
+    </div>
+
+    <!-- <div class="box">
+        <img class="cimg" src='../img/desktop.png' alt="desktop"></img>
+    </div> -->
+    <div class="container">
+          <img class="cimg" src='../img/desktop.png' alt="desktop"></img>
+         
+    </div>
+</body>
+</html>
