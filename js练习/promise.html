@@ -1,35 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
+
 <body>
-    <script>
-        let p=new Promise((resolve,reject)=>{
-                    console.log('promise');
-                    resolve('resolve value');
-        });
-        p.then((value)=>{
-                console.log(value);
-        });
-        p.finally((v)=>{
-                    console.log('finally',v);
-        });
-        console.log('hi');
-        const p1 = new Promise(function (resolve, reject) {
-  setTimeout(() => reject(new Error('fail')), 3000)
-})
+  <script>
+    //         let p=new Promise((resolve,reject)=>{
+    //                     console.log('promise');
+    //                     resolve('resolve value');
+    //         });
+    //         p.then((value)=>{
+    //                 console.log(value);
+    //         });
+    //         p.finally((v)=>{
+    //                     console.log('finally',v);
+    //         });
+    //         console.log('hi');
+    //         const p1 = new Promise(function (resolve, reject) {
+    //   setTimeout(() => reject(new Error('fail')), 3000)
+    // })
 
-const p2 = new Promise(function (resolve, reject) {
-  setTimeout(() => resolve(p1), 1000)
-})
+    // const p2 = new Promise(function (resolve, reject) {
+    //   setTimeout(() => resolve(p1), 1000)
+    // })
 
-p2
-  .then(result => console.log(result))
-  .catch(error => console.log(error))
-    </script>
+    // p2
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log(error))
+    // var promise = new Promise((resolve, reject) => {
+    //         resolve(Promise.reject('failed'));
+    //     });
+    //     console.log(promise);
+    //     promise.then((msg) => {
+    //         console.log('完成：' , msg);
+    //     }, (reason) => {
+    //         console.log('拒绝：', reason);
+    //     });
+    //     var promise1 = new Promise((resolve, reject) => {
+    //         reject(Promise.resolve('success'));
+    //     });
+    //     console.log(promise1);
+    //     promise1.then((msg) => {
+    //         console.log('完成：' , msg);
+    //     }, (reason) => {
+    //         console.log('拒绝：' ,reason);
+    //     });
+
+    // Promise.resolve(Promise.reject('failed')).then((msg) => {
+    //         console.log('完成：' , msg);
+    //     }, (reason) => {
+    //         console.log('拒绝：' ,reason);
+    //     });
+    // function promiseFactory(n) {
+    //   let promises = [];
+
+    //   for (let i = 0; i < n; i++) {
+    //    let p= new Promise(function (resolve, reject) {
+    //       setTimeout(() => console.log(i), 3000*i);
+    //     });
+    //     promises.push(p);
+    //   }
+    //   return promises;
+    // }
+
+    // let promises=promiseFactory(3);
+    // console.log(promises);
+
+    // Promise.resolve(123).then((res) => {
+
+    //   return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       console.log(res);
+         
+    //     }, 10000);
+    //   });
+    // }).then(res => {
+    //   setTimeout(() => {
+    //     console.log('then',res);
+    //   }, 5000);
+    // }).catch(error=>{
+    //   console.log('catch',error);
+    // })  
+
+      // let p=Promise.resolve(123).then(res=>{
+      //   console.log('res',res);
+      //   return 'bbb'
+      // }).catch(error=>{
+      //   console.log('error',error);
+      // });
+  
+//       var p1 = new Promise( function(resolve,reject){
+//   foo.bar();
+//   resolve( 1 );	  
+// });
+
+// let s=p1.then(
+//   function(value){
+//     console.log('p1 then value: ' + value);
+//   },
+//   function(err){
+//     console.log('p1 then err: ' + err);
+//   }
+// ).then(
+//   function(value){
+//     console.log('p1 then then value: '+value);
+//   },
+//   function(err){
+//     console.log('p1 then then err: ' + err);
+//   }
+// );
+
+// var p2 = new Promise(function(resolve,reject){
+//   resolve( 2 );	
+// });
+
+// p2.then(
+//   function(value){
+//     console.log('p2 then value: ' + value);
+//     foo.bar();
+//   }, 
+//   function(err){
+//     console.log('p2 then err: ' + err);
+//   }
+// ).then(
+//   function(value){
+//     console.log('p2 then then value: ' + value);
+//   },
+//   function(err){
+//     console.log('p2 then then err: ' + err);
+//     return 1;
+//   }
+// ).then(
+//   function(value){
+//     console.log('p2 then then then value: ' + value);
+//   },
+//   function(err){
+//     console.log('p2 then then then err: ' + err);
+//   }
+// );
+throw 123;
+console.log(99);
+  </script>
 </body>
+
 </html>
+
+
+
+SELECT mt_coupon.id, mt_coupon.title, mt_coupon.money
+	, concat('https://www.metoo-app.com', thumbnail) AS thumbnail
+	, from_unixtime(mt_coupon.endtime, '%Y.%m.%d') AS endtime, mt_coupon.num
+	, COUNT(mt_coupon_order.oid) AS gets
+	, (
+		SELECT COUNT(1)
+		FROM mt_coupon_order
+		WHERE mt_coupon_order.usetime > 0
+			AND mt_coupon_order.coid = mt_coupon.id
+	) AS used
+FROM `mt_coupon`
+	LEFT JOIN mt_coupon_order ON mt_coupon_order.coid = mt_coupon.id
+WHERE mt_coupon.mid = 2
