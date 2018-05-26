@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>directive</title>
+</head>
+
+<body>
+    <div id="app" v-up:suffix.foo.bar>{{title}}</div>
+    <!-- <div id="app" v-up="{ color: 'white', text: 'hello!' }">{{title}}</div> -->
+    <!-- <div id="app" v-up='Math.random(0,9)'>{{title}}</div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+        Vue.directive('up', {
+            bind(el, binding, vn) {//vn:vnode
+                    console.log(el, binding, vn);
+                    
+            },
+            inserted(el, binding, vn ) {
+                console.log(el, binding, vn);
+            },
+
+            update(el, binding, vn ) {
+                console.log(el, binding, vn);
+            },
+
+            componentUpdated(el, binding, vn, oldVn) {
+                console.log(el, binding, vn,oldVn);
+            },
+            unbind(el, binding, vn, oldVn) {
+                console.log(el, binding, vn,oldVn);
+            },
+
+        });
+            let vm=new Vue({
+                data:{
+                    title:'directive demo',
+                    suffix:123,
+                    foo:false
+                }
+            });
+            vm.$mount('#app');
+
+    </script>
+</body>
+
+</html>
