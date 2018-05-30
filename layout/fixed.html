@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father{
+            width:300px;
+            height:200px;
+            position: relative;
+            background:green;
+            text-align: center;
+        }
+        .right{
+            height:0;
+            text-align:right;
+            overflow: hidden;
+        }
+        .son{
+            /* fixed,absoluted  */
+            display:inline;
+            width:40px;height:40px;
+            position:fixed;
+            margin-left:-40px;
+            background:gold;
+        }
+        .p{
+            position: fixed;
+            width:40px;height:40px;
+            background:gold;
+        }
+        .ch{
+
+        }
+        .ak{
+            /* display: inline; */
+            position: fixed;;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="right">
+            <div class="son"></div>
+        </div>
+    </div>
+    <div class="father">
+        <div class="ch">
+                <div class="p"></div>
+
+        </div>
+    </div>    
+    <div class="father">
+        <div class="ak">hhk</div>
+    </div>
+</body>
+</html>

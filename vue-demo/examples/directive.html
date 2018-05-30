@@ -40,6 +40,14 @@
                     title:'directive demo',
                     suffix:123,
                     foo:false
+                },
+                beforeUpdate(){
+                    console.log('beforeupdate');
+                    
+                },
+                updated(){
+                    console.log('updated');
+                    
                 }
             });
             vm.$mount('#app');

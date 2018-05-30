@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ref</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <div id="box"></div>
+    <template  type='text/x-template' id='temp'>
+        <div class="app">
+            <child ref='refChild'></child>
+        </div>
+    </template>
+    <template id='child'>
+        <div class="child">
+            {{content}}
+        </div>
+    </template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+        // let app=Vue.extend({
+        //     name:'appCom',
+        //     template:`
+        //     <div>{{title}}</div>
+        //     `,
+        //     data(){
+        //        return {
+        //         title:'$ref'
+        //        }
+        //     }
+        // });
+        //  let vm=new app();
+        //  let vm1=new app();
+        //  vm.$mount('#app');
+        //  vm1.$mount('#box');
+            Vue.component('child',{
+                template:'#child',
+                data(){
+                    return{
+                        content:'i am a child'
+                    }
+                },
+                methods:{
+                    change(){
+                        this.content='change content';
+                    }
+                }
+            })
+        let vm=new Vue({
+            el:'#app',
+            template:'#temp',
+            mounted(){
+                console.log(this);
+                //this.$refs.refChild.content
+                 //this.$refs.refChild.change();
+            }
+        });
+    </script>
+</body>
+</html>
