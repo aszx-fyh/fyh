@@ -149,19 +149,3 @@ console.log(99);
 </body>
 
 </html>
-
-
-
-SELECT mt_coupon.id, mt_coupon.title, mt_coupon.money
-	, concat('https://www.metoo-app.com', thumbnail) AS thumbnail
-	, from_unixtime(mt_coupon.endtime, '%Y.%m.%d') AS endtime, mt_coupon.num
-	, COUNT(mt_coupon_order.oid) AS gets
-	, (
-		SELECT COUNT(1)
-		FROM mt_coupon_order
-		WHERE mt_coupon_order.usetime > 0
-			AND mt_coupon_order.coid = mt_coupon.id
-	) AS used
-FROM `mt_coupon`
-	LEFT JOIN mt_coupon_order ON mt_coupon_order.coid = mt_coupon.id
-WHERE mt_coupon.mid = 2

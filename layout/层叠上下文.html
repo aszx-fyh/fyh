@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        .float{
+           color:red;
+           position: relative;
+        }
+        .img{
+            position: relative;
+            top:-10px;
+        }
+        .box { background-color: blue; opacity: 0.5;  }
+.box > img { 
+  position: relative; z-index: -1; right: -150px;
+}
+    </style>
+</head>
+<body> <div class="float">
+    任务通关后即可申请复盘项目,用项目验证能力 从需求评审到部署上线,体验真实的
+</div>
+    <img class='img' src="../img/desktop.png" alt="">
+   <div class="box">
+    <img  src="../img/desktop.png" alt="">
+   </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <title>transition</title>
+</head>
+
+<body>
+    <div id="app" ></div>
+    <template id='temp'>
+            <el-carousel :interval="5000" arrow="always">
+                    <el-carousel-item v-for="item in 4" :key="item">
+                            <transition 
+                            @after-enter="transitionComplete"
+                            @before-enter="before">
+                                <div :key='item'>toggled content{{item}}</div>
+                              </transition>
+                    </el-carousel-item>
+                  </el-carousel>
+    </template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script>
+       
+            let vm=new Vue({
+                template:'#temp',
+                data:{
+                  ok:true
+                },
+                methods:{
+                    transitionComplete(el){
+                        debugger
+                    },
+                    before(el){
+                        debugger
+                    }
+                }
+            });
+            vm.$mount('#app');
+
+    </script>
+</body>
+
+</html>
