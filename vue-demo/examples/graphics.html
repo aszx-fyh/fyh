@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>graphics</title>
+    <style>
+        #container{
+            width:300px;
+            height:200px;
+            background:yellow;
+        }
+    </style>
 </head>
 <body>
-    <div class="container"></div>
-    <script src="../spa/node_modules/graphicsjs/dist/graphics.js"></script>
+    <div id="container"></div>
+    <script src="../spa/node_modules/graphicsjs/dist/graphics.min.js"></script>
     <script>
-        
+        var stage = acgraph.create('container',800,600);
+var text = acgraph.text(0, 0, "Hello World!").fontSize('24pt');
+ var bounds = text.getBounds();
+ stage.rect(bounds.left, bounds.top, bounds.width, bounds.height).fill('red 0.5');
+stage.addChild(text);
     </script>
 </body>
 </html>
