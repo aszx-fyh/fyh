@@ -1,16 +1,26 @@
 <template>
   <div id="app">
-    
+    {{msg}}
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  beforeMount(){
+    console.log('$http',this.$http);
+    
+    this.$http.get('/').then(res=>{
+      this.msg=res.data;
+    }).catch(error=>{ 
+      console.log('请求错误 app',error);
+    });
   }
 }
 </script>
