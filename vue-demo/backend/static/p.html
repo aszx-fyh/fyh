@@ -344,7 +344,8 @@
                                 var currentSilder=this.slides[this.activeIndex];
                                 var currentPageVideoNodes=currentSilder.querySelectorAll('video');
                                  var allVideoNodes=document.querySelectorAll('video');//所有的video
-                                 for(var v of allVideoNodes){
+                                 for(var i=0;i< allVideoNodes.length;i++){
+                                        v=allVideoNodes[i];
                                      if(Array.prototype.indexOf.call(currentPageVideoNodes,v)>-1){//当前页的视频播放
                                         v.play();
                                      }else{//其他页的视频暂停

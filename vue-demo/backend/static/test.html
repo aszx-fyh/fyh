@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>requestAnimationFrame</title>
+    <link rel="stylesheet" href="./animate.css">
+    <style>
+        .an{
+            animation-fill-mode:backwards;
+        }
+        .t{
+            color:red;
+            transition: all 5s ease-in  1s;
+        }
+        .t:hover{
+            color:blue;
+        }
+    </style>
 </head>
+
 <body>
-    Document
+    <div id="box" class="t animated">animation</div>
+
+    <script src="./vconsole.min.js"></script>
+    <script>
+         // 初始化
+  var vConsole = new VConsole();
+  console.log('Hello world');
+    </script>
+    <script>
+        var box=document.getElementById('box');
+        box.addEventListener('animationend',function (params) {
+            console.log(1);    
+        })
+        box.addEventListener('transitionend',function (params) {
+            console.log(2);    
+        })
+        box.addEventListener('webkitAnimationEnd',function (params) {
+            console.log(1);    
+        })
+        box.addEventListener('webkitTransitionEnd',function (params) {
+            console.log(2);    
+        })
+        box.classList.add('swing');
+        console.log(window.onanimationend,window.ontransitionend);
+        console.log(window.onwebkitanimationend,window.onwebkittransitionend);
+        
+    </script>
 </body>
+
 </html>
