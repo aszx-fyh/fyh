@@ -1,0 +1,38 @@
+type Query {
+    users: [User!]!
+    user(id: ID!): User
+    feed:[Link!]!
+    link(id:ID!):Link
+    getcsk:csk
+}
+  
+  type Mutation {
+    createUser(name: String!): User!
+    post(url:String!,description:String!):Link!
+    updateLink(id:ID!,url:String,description:String):Link
+    deleteLink(id:ID!):Link
+  }
+  
+  type User {
+    id: ID!
+    name: String!
+  }
+
+  type Link{
+      id:ID!
+      description:String
+      url:String
+  }
+
+  union cs=User | Link
+
+  type csk{
+    name:cs
+  }
+
+  extend type QueryRoot {
+  human: Human
+  pet: Pet
+  catOrDog: CatOrDog
+}
+

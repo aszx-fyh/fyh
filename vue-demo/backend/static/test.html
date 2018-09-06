@@ -7,47 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>requestAnimationFrame</title>
     <link rel="stylesheet" href="./animate.css">
+    <link rel="stylesheet" href="./cutscene.css">
+
     <style>
-        .an{
-            animation-fill-mode:backwards;
-        }
-        .t{
-            color:red;
-            transition: all 5s ease-in  1s;
-        }
-        .t:hover{
-            color:blue;
-        }
+     
     </style>
 </head>
 
 <body>
-    <div id="box" class="t animated">animation</div>
+   <div id="a">viewport</div>
+   <div id="b">stylesheet</div>
+   <div id="c">vconsole</div>
+   <div id="d">animate</div>
 
     <script src="./vconsole.min.js"></script>
+    <script src="./Animation.js"></script>
     <script>
          // 初始化
   var vConsole = new VConsole();
   console.log('Hello world');
     </script>
     <script>
-        var box=document.getElementById('box');
-        box.addEventListener('animationend',function (params) {
-            console.log(1);    
-        })
-        box.addEventListener('transitionend',function (params) {
-            console.log(2);    
-        })
-        box.addEventListener('webkitAnimationEnd',function (params) {
-            console.log(1);    
-        })
-        box.addEventListener('webkitTransitionEnd',function (params) {
-            console.log(2);    
-        })
-        box.classList.add('swing');
-        console.log(window.onanimationend,window.ontransitionend);
-        console.log(window.onwebkitanimationend,window.onwebkittransitionend);
-        
+    
+    console.log(window.devicePixelRatio,window.screen.width,window.screen.height);
     </script>
 </body>
 
