@@ -1,0 +1,11 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "typesrcript 练习",
+  "main": "index.js",
+  "author": "fyh",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
