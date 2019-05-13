@@ -209,3 +209,34 @@ enum Direction {
 }
 
 let xs = [0, 0, 1, null];
+let x1 = () => ({ name: "Alice" });
+let y1 = () => ({ name: "Alice", location: "Seattle" });
+
+x1 = y1;
+y1 = x1;
+interface Empty<T> {
+  data: T;
+}
+let x2: Empty<number>;
+let y2: Empty<string>;
+
+x2 = y2; // OK, because y matches structure of x
+
+interface Bird {
+  fly(): void;
+  layEggs(): void;
+}
+
+interface Fish {
+  swim(): void;
+  layEggs(): number;
+}
+
+function getSmallPet(): Fish | Bird {
+  // ...
+  return 1;
+}
+
+let pet = getSmallPet();
+pet.layEggs(); // okay
+pet.swim(); // errors
