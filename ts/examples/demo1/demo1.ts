@@ -207,3 +207,5 @@ enum Direction {
   Left,
   Right
 }
+
+let xs = [0, 0, 1, null];
