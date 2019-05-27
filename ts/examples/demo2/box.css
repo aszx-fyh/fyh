@@ -1,0 +1,35 @@
+._box {
+  height: 50px;
+  width: 50px;
+  background: red;
+  position: relative;
+  margin: 10px;
+  /*防止外边距合并*/
+  overflow: hidden;
+}
+._centerDiv {
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+}
+.centerDiv {
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.centerNotAbsolute {
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  /* margin: -10px 0 0 -10px; */
+  transform: translate(-50%, -50%);
+}
