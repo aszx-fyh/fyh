@@ -1,0 +1,31 @@
+<div class="box">
+  <span>review</span>
+  <div class="arrow"></div>
+</div>
+<div class="box">
+  <span>review</span>
+  <div class="arrow"></div>
+</div>
+<style>
+  .box {
+    width: 200px;
+    height: 50px;
+    background: #eee;
+    display: flex;
+  }
+  .box span {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .arrow {
+    flex-shrink: 0;
+  }
+  .arrow::after {
+    border-left: 20px solid;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    color: gold;
+    content: '';
+    display: block;
+  }
+</style>
